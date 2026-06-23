@@ -1,28 +1,29 @@
 # maze-frontend
 
-Frontend for the Maze backend, built with React + TypeScript + Vite.
+Maze frontend kommuniserer med maze-server for å vise labyrinten og spillerne
+Frontend for Maze-backend, utviklet med React + TypeScript + Vite.
 
-## Features
+## Funksjoner
 
-- Create player/game via `POST /game`
-- Get directional view via `GET /game/{playerId}/view`
-- Move player via `POST /game/{playerId}/move` with `{ "direction": "NORTH|SOUTH|EAST|WEST" }`
-- Get escaped status via `GET /game/{playerId}/status`
-- Subscribe to `/topic/game-state` via STOMP/SockJS (`/ws`) for live updates
-- Simple player/state UI
+- Opprett spiller/spill via `POST /game`
+- Hent retningsvisning via `GET /game/{playerId}/view`
+- Flytt spilleren via `POST /game/{playerId}/move` med `{ "direction": "NORTH|SOUTH|EAST|WEST" }`
+- Hent spillerens rømningsstatus via `GET /game/{playerId}/status`
+- Abonner på `/topic/game-state` via STOMP/SockJS (`/ws`) for sanntidsoppdateringer
+- Enkelt brukergrensesnitt for spiller- og spillstatus
 
-## Requirements
+## Krav
 
-- Node.js 20+
-- Running backend on `http://localhost:8080` (default)
+- Node.js 20 eller nyere
+- Backend kjører på `http://localhost:8080` (standard)
 
-## Setup
+## Oppsett
 
-1. Install dependencies
-2. Optional: set `VITE_API_BASE` in `.env.local`
-3. Start dev server
+1. Installer avhengigheter.
+2. Valgfritt: Sett `VITE_API_BASE` i `.env.local`.
+3. Start utviklingsserveren.
 
-## Commands
+## Kommandoer
 
 ```bash
 npm install
@@ -31,24 +32,23 @@ npm run test
 npm run build
 ```
 
-## Environment
+## Miljøvariabler
 
-Copy `.env.example` to `.env.local` if your backend runs on another host:
+Kopier `.env.example` til `.env.local` dersom backend kjører på en annen vert:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then edit `.env.local`:
+Rediger deretter `.env.local`:
 
 ```bash
 VITE_API_BASE=http://localhost:8080
 ```
 
-## Project structure
+## Prosjektstruktur
 
-- `src/App.tsx` - main UI and game interactions
-- `src/api.ts` - typed API client
-- `src/types.ts` - shared frontend types
-- `src/api.test.ts` - tiny test harness for API config
-
+- `src/App.tsx` – hovedgrensesnitt og spillinteraksjoner
+- `src/api.ts` – typesikker API-klient
+- `src/types.ts` – delte typer for frontend
+- `src/api.test.ts` – enkel test for API-konfigurasjonen
