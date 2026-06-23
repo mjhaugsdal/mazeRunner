@@ -1,4 +1,9 @@
-# maze-player – Oppgave
+# maze-player
+
+Dere skal Vibe kode en maze-player.
+Oppgaven er å kommunisere med maze-server og navigere i labyrinten.
+Kan Vibe kodes i hvilket som helst språk.
+Det kan være en fordel å spesifisere på forhånd hvilket språk, rammeverk og foretrukket byggeverktøy 
 
 Løs en og en oppgave.
 
