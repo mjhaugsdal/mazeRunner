@@ -9,7 +9,7 @@ MÅ bruke:
 
 * Phyton
 
-* SKAL IKKE bruke:
+Trenger IKKE å bruke:
 
 * Database
 * WebSocket
