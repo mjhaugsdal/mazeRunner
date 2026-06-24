@@ -1,0 +1,207 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f172a url('/maze_runner.jpg') center center / cover no-repeat fixed;
+  color: #e2e8f0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.app {
+  height: 100svh;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card {
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  background: rgba(17, 24, 39, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 274px;
+  gap: 0.5rem;
+  align-items: start;
+  flex: 1;
+  min-height: 0;
+}
+
+.maze-card {
+  height: 100%;
+  overflow: auto;
+  min-height: 0;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.swagger-link {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+
+.swagger-link:hover {
+  text-decoration: underline;
+}
+
+.header-bar h1 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.connection-info {
+  margin: 0.15rem 0;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  word-break: break-all;
+}
+
+.players-panel {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+input,
+button {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+button { cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.error { color: #fca5a5; }
+
+ul {
+  margin-top: 0.4rem;
+  padding-left: 1rem;
+}
+
+.maze-grid {
+  display: inline-block;
+  background: #e2e8f0;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.maze-row {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0;
+}
+
+.maze-cell {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  line-height: 1;
+}
+
+.maze-cell.wall  { background: #0f172a; }
+.maze-cell.floor { background: #f8fafc; }
+
+.maze-cell.start {
+  background: #86efac;
+  color: #052e16;
+  font-weight: 700;
+  overflow: visible;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.maze-cell.goal {
+  background: #fde68a;
+  color: #422006;
+  font-weight: 700;
+  padding-left: 3px;
+}
+
+.maze-cell.player {
+  color: #111827;
+  font-size: 0.85rem;
+}
+
+.maze-cell.player-red    { background: #fecaca; }
+.maze-cell.player-blue   { background: #bfdbfe; }
+.maze-cell.player-green  { background: #bbf7d0; }
+.maze-cell.player-yellow { background: #fef08a; }
+.maze-cell.player-purple { background: #e9d5ff; }
+.maze-cell.player-orange { background: #fed7aa; }
+
+/* Oppdaget kart – egen seksjon under labyrinten */
+.discovered-maps-section {
+  flex-shrink: 0;
+}
+
+.discovered-maps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.discovered-map {
+  flex-shrink: 0;
+}
+
+.discovered-map h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.7rem;
+}
+
+.disc-grid {
+  display: grid;
+  gap: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.disc-cell { width: 4px; height: 4px; }
+
+.disc-cell.unknown { background: #1e293b; }
+.disc-cell.wall    { background: #0f172a; }
+.disc-cell.floor   { background: #cbd5e1; }
+.disc-cell.start   { background: #86efac; }
+.disc-cell.goal    { background: #fde68a; }
