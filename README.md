@@ -1,1 +1,1 @@
-![Beskrivende tekst](maze-frontend/til/MazeChallenge.png)
+![Beskrivende tekst](maze-frontend/MazeChallenge.png)
