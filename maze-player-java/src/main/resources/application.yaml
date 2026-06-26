@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: maze-player
+
+maze:
+  server:
+    url: http://localhost:8080
+  player:
+    name: JavaBot
+  move-delay-ms: 100
